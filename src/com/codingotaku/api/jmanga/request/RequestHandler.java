@@ -104,7 +104,7 @@ public class RequestHandler {
 		return myResponse;
 	}
 
-	public static RequestHandler create() {
+	public static RequestHandler instance() {
 		if (instance == null) instance = new RequestHandler();
 		return instance;
 	}

@@ -24,7 +24,7 @@ public class JEdenManga {
 	private int lang = Language.English.ordinal();
 	
 	public JEdenManga() {
-		handler = RequestHandler.create();
+		handler = RequestHandler.instance();
 		gson = new Gson();
 	}
 
