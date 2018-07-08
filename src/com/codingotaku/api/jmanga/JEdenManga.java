@@ -38,14 +38,9 @@ public class JEdenManga {
 		return gson.fromJson(response, MangaList.class);
 	}
 
-	public MangaList getMangaListSplited(int page) {
-		try {
+	public MangaList getMangaListSplited(int page) throws IOException {
 			JsonObject response = handler.query(String.format("list/%d/?p=%d", lang, page));
 			return gson.fromJson(response, MangaList.class);
-
-		} catch (IOException e) {
-			return new MangaList();
-		}
 	}
 
 	public MangaList getMangaListSplitedRange(int page, int size) throws IOException {
