@@ -4,11 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.codingotaku.api.jmanga.request.RequestHandler;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 public class ChapterInfo {
-	private static Gson gson = new Gson();
 	int number;
 	String date;
 	String title;
@@ -31,7 +28,6 @@ public class ChapterInfo {
 	}
 
 	public ArrayList<Page> getPages() throws IOException {
-		JsonObject response = RequestHandler.instance().query(String.format("chapter/%s", getId()));
-		return gson.fromJson(response, Chapter.class).getPages();
+		return RequestHandler.instance().query(String.format("chapter/%s", getId()), Chapter.class).getPages();
 	}
 }

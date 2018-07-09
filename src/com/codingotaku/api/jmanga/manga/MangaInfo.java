@@ -8,6 +8,7 @@ import com.codingotaku.api.jmanga.args.Language;
 import com.google.gson.annotations.SerializedName;
 
 public class MangaInfo {
+	private static String pre="https://cdn.mangaeden.com/mangasimg/%s";
 	String[] aka;
 	@SerializedName("aka-alias") String[] aka_alias;
 	String alias;
@@ -41,7 +42,7 @@ public class MangaInfo {
 		return aka;
 	}
 
-	public String[] getAka_alias() {
+	public String[] getAkaAlias() {
 		return aka_alias;
 	}
 
@@ -53,7 +54,7 @@ public class MangaInfo {
 		return artist;
 	}
 
-	public String[] getArtist_kw() {
+	public String[] getArtistKw() {
 		return artist_kw;
 	}
 
@@ -61,7 +62,7 @@ public class MangaInfo {
 		return author;
 	}
 
-	public String[] getAuthor_kw() {
+	public String[] getAuthorKw() {
 		return author_kw;
 	}
 
@@ -108,18 +109,18 @@ public class MangaInfo {
 	}
 
 	public String getImage() {
-		return image;
+		return String.format(pre, image);
 	}
 
 	public String getImageURL() {
-		return imageURL;
+		return String.format(pre,imageURL);
 	}
 
 	public Language getLanguage() {
 		return language;
 	}
 
-	public long getLast_chapter_date() {
+	public long getLastChapterDate() {
 		return last_chapter_date;
 	}
 
@@ -139,7 +140,7 @@ public class MangaInfo {
 		return title;
 	}
 
-	public String[] getTitle_kw() {
+	public String[] getTitleKw() {
 		return title_kw;
 	}
 

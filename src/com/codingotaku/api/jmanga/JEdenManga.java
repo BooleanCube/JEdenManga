@@ -2,7 +2,6 @@ package com.codingotaku.api.jmanga;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import com.codingotaku.api.jmanga.args.Language;
@@ -15,17 +14,31 @@ import com.codingotaku.api.jmanga.manga.MyManga;
 import com.codingotaku.api.jmanga.manga.Page;
 import com.codingotaku.api.jmanga.request.RequestHandler;
 import com.codingotaku.api.jmanga.request.Status;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 public class JEdenManga {
 	private final RequestHandler handler;
-	private final Gson gson;
 	private int lang = Language.English.ordinal();
-	
+
+	public static void main(String[] args) {
+		try {
+			JEdenManga mangaEden=new JEdenManga();
+			String title = mangaEden.getAllManga().getMangas().get(5).getTitle();
+			System.out.println(title);
+			Status status = mangaEden.login("mobiuslooop", "RKaihkuyloA510".toCharArray());
+			if(status==Status.OK) {
+				mangaEden.myManga().forEach(manga->{
+					System.out.println(manga.getManga().getTitle());
+				});
+			}
+			mangaEden.logout();
+			
+		} catch (IOException w) {
+			w.printStackTrace();
+		}
+	}
+
 	public JEdenManga() {
 		handler = RequestHandler.instance();
-		gson = new Gson();
 	}
 
 	public void setLanguage(Language l) {
@@ -33,20 +46,15 @@ public class JEdenManga {
 	}
 
 	public MangaList getAllManga() throws IOException {
-
-		JsonObject response = handler.query(String.format("list/%d/?p=0", lang));
-		return gson.fromJson(response, MangaList.class);
+		return handler.query(String.format("list/%d/?p=0", lang), MangaList.class);
 	}
 
 	public MangaList getMangaListSplited(int page) throws IOException {
-			JsonObject response = handler.query(String.format("list/%d/?p=%d", lang, page));
-			return gson.fromJson(response, MangaList.class);
+		return handler.query(String.format("list/%d/?p=%d", lang, page), MangaList.class);
 	}
 
 	public MangaList getMangaListSplitedRange(int page, int size) throws IOException {
-		JsonObject response = handler.query(String.format("list/%d/?p=%d&l=%d", lang, page, size));
-		return gson.fromJson(response, MangaList.class);
-
+		return handler.query(String.format("list/%d/?p=%d&l=%d", lang, page, size), MangaList.class);
 	}
 
 	public MangaInfo getMangaInfo(Manga manga) throws IOException {
@@ -54,9 +62,7 @@ public class JEdenManga {
 	}
 
 	public MangaInfo getMangaInfo(String mangaId) throws IOException {
-		JsonObject response = handler.query(String.format("manga/%s", mangaId));
-		return gson.fromJson(response, MangaInfo.class);
-
+		return handler.query(String.format("manga/%s", mangaId), MangaInfo.class);
 	}
 
 	public ArrayList<Page> getChapterPages(ChapterInfo chapter) throws IOException {
@@ -64,9 +70,7 @@ public class JEdenManga {
 	}
 
 	public ArrayList<Page> getChapterPages(String chapterId) throws IOException {
-		JsonObject response = handler.query(String.format("chapter/%s", chapterId));
-
-		return gson.fromJson(response, Chapter.class).getPages();
+		return handler.query(String.format("chapter/%s", chapterId), Chapter.class).getPages();
 	}
 
 	public Status login(String userName, char[] password) {
@@ -78,9 +82,7 @@ public class JEdenManga {
 	}
 
 	public List<MyManga> myManga() {
-		JsonObject myManga = handler.myManga();
-		MyManga[] response = gson.fromJson(myManga.getAsJsonArray("mymanga"), MyManga[].class);
-		return Arrays.asList(response);
+		return handler.myManga();
 	}
 
 }

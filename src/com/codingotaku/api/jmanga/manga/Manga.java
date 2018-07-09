@@ -3,11 +3,9 @@ package com.codingotaku.api.jmanga.manga;
 import java.io.IOException;
 
 import com.codingotaku.api.jmanga.request.RequestHandler;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 public class Manga {
-	private static Gson gson = new Gson();
+	private static String pre = "https://cdn.mangaeden.com/mangasimg/%s";
 	private String a;
 	private String[] c;
 	private int h;
@@ -34,7 +32,7 @@ public class Manga {
 	}
 
 	public String getImage() {
-		return im;
+		return String.format(pre, im);
 	}
 
 	public int getLastUpdate() {
@@ -50,8 +48,6 @@ public class Manga {
 	}
 
 	public MangaInfo getMangaInfo() throws IOException {
-		JsonObject response = RequestHandler.instance().query( String.format("manga/%s", getID()));
-		
-		return gson.fromJson(response, MangaInfo.class);
+		return RequestHandler.instance().query(String.format("manga/%s", getID()), MangaInfo.class);
 	}
 }

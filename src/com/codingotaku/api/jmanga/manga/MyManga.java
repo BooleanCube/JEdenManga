@@ -1,13 +1,13 @@
 package com.codingotaku.api.jmanga.manga;
 
 public class MyManga {
-	private String last_chapter_read;
+	private ChapterInfo last_chapter_read;
 	private int last_page;
-	private Chapter latest_chapter;
+	private ChapterInfo latest_chapter;
 	private MangaInfo manga;
-	private String new_chapter_to_read;
+	private ChapterInfo new_chapter_to_read;
 
-	public String getLastChapterRead() {
+	public ChapterInfo getLastChapterRead() {
 		return last_chapter_read;
 	}
 
@@ -15,7 +15,7 @@ public class MyManga {
 		return last_page;
 	}
 
-	public Chapter getLatestChapter() {
+	public ChapterInfo getLatestChapter() {
 		return latest_chapter;
 	}
 
@@ -23,7 +23,7 @@ public class MyManga {
 		return manga;
 	}
 
-	public String getNewChapterToRead() {
+	public ChapterInfo getNewChapterToRead() {
 		return new_chapter_to_read;
 	}
 
