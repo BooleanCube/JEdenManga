@@ -1,0 +1,33 @@
+package com.codingotaku.api.jmanga.manga;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.codingotaku.api.jmanga.request.RequestHandler;
+
+public class ChapterInfo {
+	int number;
+	String date;
+	String title;
+	String id;
+
+	public int getChapterNumber() {
+		return number;
+	}
+
+	public String getChapterDate() {
+		return date;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public ArrayList<Page> getPages() throws IOException {
+		return RequestHandler.instance().query(String.format("chapter/%s", getId()), Chapter.class).getPages();
+	}
+}
