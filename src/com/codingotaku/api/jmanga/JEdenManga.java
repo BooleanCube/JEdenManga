@@ -19,24 +19,6 @@ public class JEdenManga {
 	private final RequestHandler handler;
 	private int lang = Language.English.ordinal();
 
-	public static void main(String[] args) {
-		try {
-			JEdenManga mangaEden=new JEdenManga();
-			String title = mangaEden.getAllManga().getMangas().get(5).getTitle();
-			System.out.println(title);
-			Status status = mangaEden.login("mobiuslooop", "RKaihkuyloA510".toCharArray());
-			if(status==Status.OK) {
-				mangaEden.myManga().forEach(manga->{
-					System.out.println(manga.getManga().getTitle());
-				});
-			}
-			mangaEden.logout();
-			
-		} catch (IOException w) {
-			w.printStackTrace();
-		}
-	}
-
 	public JEdenManga() {
 		handler = RequestHandler.instance();
 	}

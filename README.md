@@ -27,7 +27,7 @@ Same as above but returns only 500 manga's informations (from manga X*500 to (X+
 ```java
 try {
   JEdenManga edenManga = new JEdenManga();
-  MangaList first500Manga = edenManga.getMangaListSplited(0);
+  MangaList first500Manga = edenManga.getMangaListSplited(3);  //returns mangas from 1500 to 2000
   List<Manga> mangas = first500Manga.getMangas();
  } catch (IOException e) {
   e.printStackTrace();
@@ -38,10 +38,15 @@ try {
 **Manga List splitted in pages with variable page size**
 
 Same as above but returns only Y manga's informations (from manga X*Y to (X+1)*Y) [25 < Y < 1500]
+ie if X is 0 and Y is 30, this will return first 30 list,
+if x is 1 and y is 30 this will return mangas 30 to 60
+if x is 2 and y is **50** it will return mangas from the range 100 to 150 and so on
+x is the page value and y is the number of manga in the page
+
 ```java
 try {
  JEdenManga edenManga = new JEdenManga();
- MangaList first10Manga = edenManga.getMangaListSplitedRange(0, 10);
+ MangaList first10Manga = edenManga.getMangaListSplitedRange(1, 30); // returns mangas from 30 to 60
  List<Manga> mangas = first10Manga.getMangas();
 } catch (IOException e) {
  e.printStackTrace();
@@ -109,8 +114,8 @@ ___
  System.out.println(status==Status.OK);
  System.out.println(status==Status.ERROR);
 ```
-password should be parsed as char array
-returns Status.OK when successful, Status.ERROR on failure
+password should be parsed as char array.
+Returns Status.OK when successful, Status.ERROR on failure
 
 ___
 **Logout**
@@ -120,8 +125,8 @@ ___
  System.out.println(status==Status.OK);
  System.out.println(status==Status.ERROR);
 ```
-password should be parsed as char array
-returns Status.OK when successful, Status.ERROR on failure
+password should be parsed as char array.
+Returns Status.OK when successful, Status.ERROR on failure
 
 ___
 
@@ -138,4 +143,21 @@ Returns all manga saved in the user's mymanga list with all the informations abo
  		System.out.println(manga.getLastChapterRead());
  	});
  }
+```
+
+**dependencies**
+```xml
+<dependencies>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.5</version>
+		</dependency>
+	</dependencies>
 ```
