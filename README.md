@@ -1,7 +1,7 @@
 # JEdenManga
 Unofficial Manga Eden API client for java see more at https://www.mangaeden.com/api
 
-~~Currently this api has limited cunctionality, we wont be able to update the progress with  manga eden.~~
+~~Currently this api has limited functionality, we wont be able to update the progress with  manga eden.~~
 
 **Manga List**
 ```java
@@ -148,16 +148,16 @@ Returns all manga saved in the user's mymanga list with all the informations abo
 **dependencies**
 ```xml
 <dependencies>
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.8.4</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.5</version>
-		</dependency>
-	</dependencies>
+	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>2.8.4</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+	<dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpclient</artifactId>
+		<version>4.5.5</version>
+	</dependency>
+</dependencies>
 ```
