@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>JEdenManga</groupId>
 	<artifactId>JEdenManga</artifactId>
-	<version>0.0.1</version>
+	<version>1.0.1</version>
 	<name>JEdenManga</name>
 	<description>Unofficial Manga Eden API client for java, see more at
 https://www.mangaeden.com</description>
@@ -31,8 +31,9 @@ https://www.mangaeden.com</description>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.5.5</version>
+			<version>4.5.6</version>
 		</dependency>
+
 	</dependencies>
 	<organization>
 		<name>Coding Otaku</name>

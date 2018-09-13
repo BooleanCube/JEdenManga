@@ -113,7 +113,7 @@ public class MangaInfo {
 	}
 
 	public String getImageURL() {
-		return String.format(pre,imageURL);
+		return imageURL;
 	}
 
 	public Language getLanguage() {

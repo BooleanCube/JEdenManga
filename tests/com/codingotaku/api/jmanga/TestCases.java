@@ -52,9 +52,9 @@ class TestCases {
 			w.printStackTrace();
 		}
 	}
-
+	
 	@Test
-	void shouldRetrieveMangasInRange() {
+	void verifyImage() {
 		try {
 			JEdenManga mangaEden = new JEdenManga();
 			MangaList allManga = mangaEden.getMangaListSplitedRange(2, 30);
