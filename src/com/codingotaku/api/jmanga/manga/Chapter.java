@@ -7,6 +7,9 @@ public class Chapter {
 	private ArrayList<String[]> images;
 	private ArrayList<Page> pages;
 
+	/**
+	 * An {@link ArrayList} containing all pages on the {@link Chapter} object.
+	 * */
 	public ArrayList<Page> getPages() {
 		if (pages != null) return pages;
 		pages = new ArrayList<>();

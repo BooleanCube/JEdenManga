@@ -1,5 +1,8 @@
 package com.codingotaku.api.jmanga.exception;
 
+import com.codingotaku.api.jmanga.manga.MyManga;
+
+/** Thrown when trying to access {@link MyManga} when user is not logged in */
 public class AccountAccessException extends RuntimeException {
 
 	/**
