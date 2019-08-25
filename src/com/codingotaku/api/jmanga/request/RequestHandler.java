@@ -12,6 +12,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 
+import com.codingotaku.api.jmanga.JEdenManga;
 import com.codingotaku.api.jmanga.exception.AccountAccessException;
 import com.codingotaku.api.jmanga.manga.MyManga;
 import com.google.gson.Gson;
@@ -39,6 +40,13 @@ public class RequestHandler {
 		client = builder.build();
 	}
 
+	/**
+	 * @param userName user name of user in string
+	 * @param password password of user in char array
+	 * @return {@link Status}
+	 * 
+	 * @see JEdenManga#login(String, char[])
+	 */
 	public Status login(String userName, char[] password) {
 		String url = String.format(accUrl + "login?username=%s&password=%s", userName, String.valueOf(password));
 		HttpGet httpget = new HttpGet(url);
@@ -59,6 +67,10 @@ public class RequestHandler {
 		}
 	}
 
+	/**
+	 * @return Logout status
+	 * @see JEdenManga#logout()
+	 */
 	public Status logout() {
 		String url = accUrl + "logout/";
 		HttpGet httpget = new HttpGet(url);
@@ -78,6 +90,10 @@ public class RequestHandler {
 		}
 	}
 
+	/**
+	 * List of favorite maga of user if logged in.
+	 * @see JEdenManga#myManga()
+	 * */
 	public List<MyManga> myManga() {
 		try {
 			HttpGet httpget = new HttpGet(profUrl);
@@ -108,7 +124,8 @@ public class RequestHandler {
 	}
 
 	public static RequestHandler instance() {
-		if (instance == null) instance = new RequestHandler();
+		if (instance == null)
+			instance = new RequestHandler();
 		return instance;
 	}
 }

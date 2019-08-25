@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.codingotaku.api.jmanga.args"},{"l":"com.codingotaku.api.jmanga.exception"},{"l":"com.codingotaku.api.jmanga.manga"},{"l":"com.codingotaku.api.jmanga.request"}]

@@ -60,7 +60,7 @@ public class JEdenManga {
 
 	/**
 	 * Similar to {@link JEdenManga#getMangaListSplited(int)}, but returns only Y
-	 * manga’s informations (from manga XY to (X+1)Y) [25 < Y < 1500]<br>
+	 * manga’s informations (from manga XY to (X+1)Y) [25 &lt; Y &lt; 1500]<br>
 	 * If X is 0 and Y is 30, this will return first 30 list, if x is 1 and y is 30
 	 * this will return mangas 30 to 60 if x is 2 and y is 50 it will return mangas
 	 * from the range 100 to 150 and so on x is the page value and y is the number
@@ -124,6 +124,9 @@ public class JEdenManga {
 	/**
 	 * Login user with <a href="https://www.mangaeden.com">mangaeden</a> web site, the session is stored in a cookie but it
 	 * will be cleared as soon as the application completely terminates. saving cookie is not supported yet.
+	 * 
+	 * @param userName user name of user in string
+	 * @param password password of user in char array
 	 * 
 	 * @return {@link Status} {@link Status#OK} if request succeeds and {@link Status#ERROR} when request fail.
 	 */
