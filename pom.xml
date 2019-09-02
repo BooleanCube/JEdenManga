@@ -2,12 +2,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>JEdenManga</groupId>
-	<artifactId>JEdenManga</artifactId>
+	<groupId>com.codingotaku.api</groupId>
+	<artifactId>jedenmanga</artifactId>
 	<version>1.0.1</version>
 	<name>JEdenManga</name>
 	<description>Unofficial Manga Eden API client for java, see more at
-https://www.mangaeden.com</description>
+https://www.mangaeden.com/api</description>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub codingotaku Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/codingotaku/JEdenManga</url>
+		</repository>
+	</distributionManagement>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
@@ -36,7 +43,7 @@ https://www.mangaeden.com</description>
 
 	</dependencies>
 	<organization>
-		<name>Coding Otaku</name>
+		<name>CodingOtaku</name>
 		<url>https://codingotaku.com</url>
 	</organization>
 </project>
