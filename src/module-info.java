@@ -6,7 +6,6 @@ module com.codingotaku.jEdenManga {
 	exports com.codingotaku.api.jmanga.request;
 
 	requires gson;
-	requires junit;
 	requires org.apache.httpcomponents.httpclient;
 	requires org.apache.httpcomponents.httpcore;
 	requires org.hamcrest.core;
