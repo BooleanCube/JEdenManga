@@ -1,4 +1,4 @@
-module com.codingotaku.jEdenManga {
+module jeden_manga {
 	exports com.codingotaku.api.jmanga.manga;
 	exports com.codingotaku.api.jmanga.args;
 	exports com.codingotaku.api.jmanga;
@@ -8,6 +8,4 @@ module com.codingotaku.jEdenManga {
 	requires gson;
 	requires org.apache.httpcomponents.httpclient;
 	requires org.apache.httpcomponents.httpcore;
-	requires org.hamcrest.core;
-	requires org.junit.jupiter.api;
 }

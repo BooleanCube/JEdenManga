@@ -8,12 +8,19 @@
 	<name>JEdenManga</name>
 	<description>Unofficial Manga Eden API client for java, see more at
 https://www.mangaeden.com/api</description>
+	<properties>
+		<maven.compiler.source>13</maven.compiler.source>
+		<maven.compiler.target>13</maven.compiler.target>
+	</properties>
 	<distributionManagement>
 		<repository>
-			<id>github</id>
-			<name>GitHub codingotaku Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/codingotaku/api</url>
+			<id>gitlab-maven</id>
+			<url>https://gitlab.com/api/v4/projects/14189270/packages/maven</url>
 		</repository>
+		<snapshotRepository>
+			<id>gitlab-maven</id>
+			<url>https://gitlab.com/api/v4/projects/14189270/packages/maven</url>
+		</snapshotRepository>
 	</distributionManagement>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
