@@ -1,4 +1,8 @@
 # JEdenManga
+
+> This API no longer works because mangaden was shut down or isn't working properly. Instead you can check my other Manga Info and Reading API: https://github.com/BooleanCube/readm-api
+
+
 Unofficial Manga Eden API client for java see more at https://www.mangaeden.com/api
 
 ~~Currently this api has limited functionality, we wont be able to update the progress with  manga eden.~~
